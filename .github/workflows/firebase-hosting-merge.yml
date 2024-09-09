@@ -31,11 +31,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List dist folder contents
+        run: |
+          ls -la dist
+
       # Step 5: Deploy to Firebase Hosting
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }} # GitHub token for auth with Firebase
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TEST_DEPLOY_CB7CE }} # Firebase service account key
-          channelId: live # Deploy to the live channel
-          projectId: react-test-deploy-cb7ce # Your Firebase project ID
+
+      # - name: Deploy to Firebase
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: ${{ secrets.GITHUB_TOKEN }} # GitHub token for auth with Firebase
+      #     firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TEST_DEPLOY_CB7CE }} # Firebase service account key
+      #     channelId: live # Deploy to the live channel
+      #     projectId: react-test-deploy-cb7ce # Your Firebase project ID
